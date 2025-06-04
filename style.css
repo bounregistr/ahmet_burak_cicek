@@ -1,8 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   background-color: #f3f3f3;
 }
 
@@ -13,68 +12,135 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-info {
+  font-size: 0.9em;
+  margin-top: 5px;
 }
 
 .sidebar {
-  position: absolute;
-  top: 70px;
-  left: 0;
-  width: 220px;
   background-color: #ddd;
-  padding: 20px;
-  height: calc(100% - 70px);
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidebar ul {
   list-style-type: none;
   padding: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .sidebar li {
   padding: 8px 0;
   cursor: pointer;
+  border-bottom: 1px solid #bbb;
 }
 
 .profile-photo {
-  width: 120px;
+  width: 100px;
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
 .main {
-  margin-left: 240px;
-  padding: 20px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .student-info {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
 .student-info img {
-  width: 120px;
+  width: 100px;
   height: auto;
+  align-self: center;
 }
 
 .student-info table {
   font-size: 14px;
+  width: 100%;
 }
 
 .term table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-size: 0.9em;
 }
 
 .term th, .term td {
   border: 1px solid #aaa;
-  padding: 8px;
+  padding: 6px;
   text-align: left;
   background-color: white;
 }
 
 .term th {
   background-color: #cde;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    flex-wrap: nowrap;
+  }
+  
+  .user-info {
+    margin-top: 0;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .sidebar {
+    width: 220px;
+    height: calc(100vh - 70px);
+    position: sticky;
+    top: 70px;
+    padding: 20px;
+    align-items: flex-start;
+  }
+  
+  .sidebar ul {
+    text-align: left;
+  }
+  
+  .main {
+    margin-left: 0;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .student-info {
+    flex-direction: row;
+  }
+  
+  .student-info img {
+    width: 120px;
+    align-self: flex-start;
+  }
+  
+  .term table {
+    font-size: 1em;
+  }
 }
