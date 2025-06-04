@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+}
+
+.header {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 220px;
+  background-color: #ddd;
+  padding: 20px;
+  height: calc(100% - 70px);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.profile-photo {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.main {
+  margin-left: 240px;
+  padding: 20px;
+}
+
+.student-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.student-info img {
+  width: 120px;
+  height: auto;
+}
+
+.student-info table {
+  font-size: 14px;
+}
+
+.term table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.term th, .term td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  text-align: left;
+  background-color: white;
+}
+
+.term th {
+  background-color: #cde;
+}
