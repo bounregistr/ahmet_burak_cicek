@@ -4,7 +4,175 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boğaziçi University | Student Info</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+    }
+
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header h1 {
+      font-size: 1.5em;
+      margin: 5px 0;
+    }
+
+    .user-info {
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .sidebar {
+      background-color: #ddd;
+      padding: 15px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .sidebar li {
+      padding: 8px 0;
+      cursor: pointer;
+      border-bottom: 1px solid #bbb;
+    }
+
+    .profile-photo {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .main {
+      padding: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .student-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .student-info img {
+      width: 100px;
+      height: auto;
+      align-self: center;
+    }
+
+    .student-info table {
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .term {
+      margin-bottom: 25px;
+      overflow-x: auto;
+    }
+
+    .term h3 {
+      margin-bottom: 10px;
+    }
+
+    .term table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9em;
+      min-width: 600px;
+    }
+
+    .term th, .term td {
+      border: 1px solid #aaa;
+      padding: 6px;
+      text-align: left;
+      background-color: white;
+    }
+
+    .term th {
+      background-color: #cde;
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .header {
+        flex-wrap: nowrap;
+      }
+      
+      .header h1 {
+        font-size: 1.8em;
+      }
+      
+      .user-info {
+        margin-top: 0;
+        font-size: 1em;
+      }
+      
+      .content-wrapper {
+        display: flex;
+        flex-direction: row;
+      }
+      
+      .sidebar {
+        width: 220px;
+        height: calc(100vh - 70px);
+        position: sticky;
+        top: 70px;
+        padding: 20px;
+        align-items: flex-start;
+      }
+      
+      .sidebar ul {
+        text-align: left;
+      }
+      
+      .main {
+        margin-left: 0;
+        flex: 1;
+        padding: 20px;
+      }
+      
+      .student-info {
+        flex-direction: row;
+      }
+      
+      .student-info img {
+        width: 120px;
+        align-self: flex-start;
+      }
+      
+      .term table {
+        font-size: 1em;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="header">
@@ -12,162 +180,158 @@
     <div class="user-info">AHMET BURAK ÇİÇEK</div>
   </div>
 
-  <div class="sidebar">
-    <img src="nophoto.jpg" alt="Profile" class="profile-photo" />
-    <p><strong>Student Id:</strong> 2021400300</p>
-    <ul>
-      <li>General Settings</li>
-      <li>BUCard Dining Logs</li>
-      <li>Change Email</li>
-    </ul>
-  </div>
-
-  <div class="main">
-    <h2>Academic Records</h2>
-    <div class="student-info">
-      <img src="2021400300.jpg" alt="Student Photo" />
-      <table>
-        <tr><td><strong>Name:</strong></td><td>AHMET BURAK ÇİÇEK</td></tr>
-        <tr><td><strong>Student:</strong></td><td>2021400300</td></tr>
-        <tr><td><strong>Semester:</strong></td><td>8</td></tr>
-        <tr><td><strong>English Test / Result:</strong></td><td>PROFIC (BUEPT) / A</td></tr>
-        <tr><td><strong>Faculty:</strong></td><td>FACULTY OF ENGINEERING</td></tr>
-        <tr><td><strong>Department:</strong></td><td>COMPUTER ENGINEERING</td></tr>
-        <tr><td><strong>Status / Term Status:</strong></td><td>UNDERGRAD / NORMAL</td></tr>
-        <tr><td><strong>High School:</strong></td><td>ÖZEL MESAJ KOLEJİ FEN LİSESİ</td></tr>
-        <tr><td><strong>Email:</strong></td><td>ahmet.cicek@std.boun.edu.tr</td></tr>
-        <tr><td><strong>Advisor:</strong></td><td>INCI MELIHA BATYAS (inci.batyas@boun.edu.tr)</td></tr>
-        <tr><td><strong>GPA:</strong></td><td>3.47</td></tr>
-      </table>
+  <div class="content-wrapper">
+    <div class="sidebar">
+      <img src="nophoto.jpg" alt="Profile" class="profile-photo" />
+      <p><strong>Student Id:</strong> 2021400300</p>
+      <ul>
+        <li>General Settings</li>
+        <li>BUCard Dining Logs</li>
+        <li>Change Email</li>
+      </ul>
     </div>
 
-    <div class="term">
-      <h3>Semester: 2024/2025-2</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>CMPE462.01</td><td>MACHINE LEARNING</td><td></td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE58G.01</td><td>	SP.TP.ADV.TOP.IN.THEORETICAL COM.SCI</td><td></td><td>3</td><td>10</td><td></td></tr>
-        <tr><td>HTR312.07</td><td>HISTORY OF THE TURKISH REPUBLIC II</td><td></td><td>2</td><td>4</td><td></td></tr>
-        <tr><td>CMPE499.01</td><td>	SP.TP.FUNCTIONAL PROGRAMMING&VERIFICATION</td><td></td><td>3</td><td>6</td><td></td></tr>
-      </table>
+    <div class="main">
+      <h2>Academic Records</h2>
+      <div class="student-info">
+        <img src="2021400300.jpg" alt="Student Photo" />
+        <table>
+          <tr><td><strong>Name:</strong></td><td>AHMET BURAK ÇİÇEK</td></tr>
+          <tr><td><strong>Student:</strong></td><td>2021400300</td></tr>
+          <tr><td><strong>Semester:</strong></td><td>8</td></tr>
+          <tr><td><strong>English Test / Result:</strong></td><td>PROFIC (BUEPT) / A</td></tr>
+          <tr><td><strong>Faculty:</strong></td><td>FACULTY OF ENGINEERING</td></tr>
+          <tr><td><strong>Department:</strong></td><td>COMPUTER ENGINEERING</td></tr>
+          <tr><td><strong>Status / Term Status:</strong></td><td>UNDERGRAD / NORMAL</td></tr>
+          <tr><td><strong>High School:</strong></td><td>ÖZEL MESAJ KOLEJİ FEN LİSESİ</td></tr>
+          <tr><td><strong>Email:</strong></td><td>ahmet.cicek@std.boun.edu.tr</td></tr>
+          <tr><td><strong>Advisor:</strong></td><td>INCI MELIHA BATYAS (inci.batyas@boun.edu.tr)</td></tr>
+          <tr><td><strong>GPA:</strong></td><td>3.47</td></tr>
+        </table>
+      </div>
+
+      <div class="term">
+        <h3>Semester: 2024/2025-2</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>CMPE462.01</td><td>MACHINE LEARNING</td><td></td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE58G.01</td><td>SP.TP.ADV.TOP.IN.THEORETICAL COM.SCI</td><td></td><td>3</td><td>10</td><td></td></tr>
+          <tr><td>HTR312.07</td><td>HISTORY OF THE TURKISH REPUBLIC II</td><td></td><td>2</td><td>4</td><td></td></tr>
+          <tr><td>CMPE499.01</td><td>SP.TP.FUNCTIONAL PROGRAMMING&VERIFICATION</td><td></td><td>3</td><td>6</td><td></td></tr>
+        </table>
+      </div>
+      
+      <div class="term">
+        <h3>Semester: 2024/2025-1</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>CMPE443.01</td><td>EMBEDDED SYSTEM DESIGN</td><td>CB</td><td>6</td><td>6</td><td></td></tr>
+          <tr><td>CMPE344.01</td><td>COMPUTER ORGANIZATION</td><td>BB</td><td>6</td><td>6</td><td></td></tr>
+          <tr><td>CMPE322.01</td><td>OPERATING SYSTEMS</td><td>BA</td><td>5</td><td>6</td><td></td></tr>
+          <tr><td>CMPE300.01</td><td>ANALYSIS OF ALGORITHMS</td><td>AA</td><td>5</td><td>6</td><td></td></tr>
+          <tr><td>CMPE480.01</td><td>INTRODUCTION TO ARTIFICIAL INTELLIGENCE</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>CMPE451.01</td><td>PROJECT DEVELOPMENT</td><td>CB</td><td>6</td><td>6</td><td></td></tr>
+        </table>
+      </div>   
+      
+      <div class="term">
+        <h3>Semester: 2023/2024-3</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>PHIL111.01</td><td>INTRO.TO ANCIENT & MEDIEVAL PHILOSOPHY</td><td>AA</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>TK222.09</td><td>TURKISH FOR NATIVE SPEAKERS II</td><td>AA</td><td>2</td><td>6</td><td></td></tr>       
+        </table>
+      </div>    
+      
+      <div class="term">
+        <h3>Semester: 2023/2024-2</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>CMPE230.01</td><td>SYSTEMS PROGRAMMING</td><td>BB</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE260.01</td><td>PRINCIPLES OF PROGRAMMING LANGUAGES</td><td>BA</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>CMPE362.01</td><td>INTRO.TO SIGNAL PROC. FOR COMPUTER.ENG.</td><td>CB</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE352.01</td><td>FUNDAMENTALS OF SOFTWARE ENGINEERING</td><td>BB</td><td>2</td><td>6</td><td></td></tr>  
+          <tr><td>CMPE321.01</td><td>INTRODUCTION TO DATABASE SYSTEMS</td><td>AA</td><td>4</td><td>6</td><td></td></tr>          
+        </table>
+      </div>  
+      
+      <div class="term">
+        <h3>Semester: 2023/2024-1</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>PHYS202.01</td><td>PHYSICS IV</td><td>BB</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE343.01</td><td>INTRO.TO PROBA.AND STATIS.FOR COM.ENGINEERS</td><td>BA</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>CMPE250.01</td><td>DATA STRUCTURES & ALGORITHMS</td><td>BA</td><td>4</td><td>6</td><td>R</td></tr>
+          <tr><td>TK221.05</td><td>TURKISH FOR NATIVE SPEAKERS I</td><td>AA</td><td>2</td><td>6</td><td></td></tr>
+        </table>
+      </div>    
+      
+      <div class="term">
+        <h3>Semester: 2022/2023-2</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>CMPE160.01</td><td>INTRODUCTION TO OBJECT ORIENTED PROG.</td><td>CC</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE240.01</td><td>DIGITAL SYSTEMS</td><td>AA</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE350.01</td><td>FORMAL LANGUAGES & AUTOMATA THEORY</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>EE212.01</td><td>INTRODUCTION TO ELECTRONIC ENGINEERING</td><td>AA</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>ESC301.01</td><td>THE ENVIRONMENTAL DIMENSION</td><td>AA</td><td>3</td><td>6</td><td></td></tr>
+        </table>
+      </div>    
+      
+      <div class="term">
+        <h3>Semester: 2022/2023-1</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>CMPE150.01</td><td>INTRODUCTION TO COMPUTING</td><td>AA</td><td>3</td><td>6</td><td>R</td></tr>
+          <tr><td>MATH202.01</td><td>DIFFERENTIAL EQUATIONS</td><td>AA</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>EE210.01</td><td>INTRODUCTION TO ELECTRICAL ENGINEERING</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>CMPE220.01.01</td><td>DISCRETE COMPUTATIONAL STRUCTURES</td><td>CC</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>AE121.03</td><td>CRITICAL READING</td><td>BA</td><td>2</td><td>3</td><td></td></tr>
+        </table>
+      </div>     
+     
+      <div class="term">
+        <h3>Semester: 2021/2022-2</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>EC102.05</td><td>PRINCIPLES OF MACROECONOMICS</td><td>AA</td><td>2</td><td>6</td><td></td></tr>
+          <tr><td>FR401.01</td><td>FRENCH CULTURE II</td><td>BB</td><td>6</td><td>3</td><td></td></tr>
+          <tr><td>MATH102.02</td><td>CALCULUS II</td><td>AA</td><td>3</td><td>4</td><td></td></tr>
+          <tr><td>MATH201.01</td><td>MATRIX THEORY</td><td>AA</td><td>3</td><td>4</td><td></td></tr>
+          <tr><td>PHYS201.01</td><td>PHYSICS III</td><td>BA</td><td>4</td><td>6</td><td></td></tr>
+        </table>
+      </div>     
+      
+      <div class="term">
+        <h3>Semester: 2021/2022-1</h3>
+        <table>
+          <tr>
+            <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
+          </tr>
+          <tr><td>MATH101.01</td><td>CALCULUS I</td><td>AA</td><td>4</td><td>6</td><td></td></tr>
+          <tr><td>CMPE150.03</td><td>INTRODUCTION TO COMPUTING</td><td>F</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>EC101.03</td><td>PRINCIPLES OF MICROECONOMICS</td><td>AA</td><td>3</td><td>6</td><td>R</td></tr>
+          <tr><td>CHEM105.01</td><td>FUNDAMENTALS OF CHEMISTRY</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
+          <tr><td>PHYS121.01</td><td>INTRODUCTORY MECHANICS & THERMODYNAMICS</td><td>CC</td><td>4</td><td>6</td><td></td></tr>
+        </table>
+      </div>     
     </div>
-    
-    <div class="term">
-      <h3>Semester: 2024/2025-1</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>CMPE443.01</td><td>EMBEDDED SYSTEM DESIGN</td><td>CB</td><td>6</td><td>6</td><td></td></tr>
-        <tr><td>CMPE344.01</td><td>COMPUTER ORGANIZATION</td><td>BB</td><td>6</td><td>6</td><td></td></tr>
-        <tr><td>CMPE322.01</td><td>OPERATING SYSTEMS</td><td>BA</td><td>5</td><td>6</td><td></td></tr>
-        <tr><td>CMPE300.01</td><td>ANALYSIS OF ALGORITHMS</td><td>AA</td><td>5</td><td>6</td><td></td></tr>
-        <tr><td>CMPE480.01</td><td>INTRODUCTION TO ARTIFICIAL INTELLIGENCE</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>CMPE451.01</td><td>PROJECT DEVELOPMENT</td><td>CB</td><td>6</td><td>6</td><td></td></tr>
-      </table>
-    </div>   
-    
-    <div class="term">
-      <h3>Semester: 2023/2024-3</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>PHIL111.01</td><td>	INTRO.TO ANCIENT & MEDIEVAL PHILOSOPHY</td><td>AA</td><td>3</td><td>6</td><td></td></tr>
-         <tr><td>TK222.09</td><td>TURKISH FOR NATIVE SPEAKERS II</td><td>AA</td><td>2</td><td>6</td><td></td></tr>       
- 
-      </table>
-    </div>    
-    
-    <div class="term">
-      <h3>Semester: 2023/2024-2</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>CMPE230.01</td><td>SYSTEMS PROGRAMMING</td><td>BB</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE260.01</td><td>PRINCIPLES OF PROGRAMMING LANGUAGES</td><td>BA</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>CMPE362.01</td><td>	INTRO.TO SIGNAL PROC. FOR COMPUTER.ENG.</td><td>CB</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE352.01</td><td>FUNDAMENTALS OF SOFTWARE ENGINEERING</td><td>BB</td><td>2</td><td>6</td><td></td></tr>  
-        <tr><td>CMPE321.01</td><td>	INTRODUCTION TO DATABASE SYSTEMS</td><td>AA</td><td>4</td><td>6</td><td></td></tr>          
-      </table>
-    </div>  
-    
-    <div class="term">
-      <h3>Semester: 2023/2024-1</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>PHYS202.01</td><td>PHYSICS IV</td><td>BB</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE343.01</td><td>INTRO.TO PROBA.AND STATIS.FOR COM.ENGINEERS</td><td>BA</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>CMPE250.01</td><td>DATA STRUCTURES & ALGORITHMS</td><td>BA</td><td>4</td><td>6</td><td>R</td></tr>
-        <tr><td>TK221.05</td><td>TURKISH FOR NATIVE SPEAKERS I</td><td>AA</td><td>2</td><td>6</td><td></td></tr>
-      </table>
-    </div>    
-    
-    <div class="term">
-      <h3>Semester: 2022/2023-2</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>CMPE160.01</td><td>	INTRODUCTION TO OBJECT ORIENTED PROG.</td><td>CC</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE240.01</td><td>DIGITAL SYSTEMS</td><td>AA</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE350.01</td><td>	FORMAL LANGUAGES & AUTOMATA THEORY</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>EE212.01</td><td>INTRODUCTION TO ELECTRONIC ENGINEERING</td><td>AA</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>ESC301.01</td><td>	THE ENVIRONMENTAL DIMENSION</td><td>AA</td><td>3</td><td>6</td><td></td></tr>
-      </table>
-    </div>    
-    
-    <div class="term">
-      <h3>Semester: 2022/2023-1</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>CMPE150.01</td><td>	INTRODUCTION TO COMPUTING</td><td>AA</td><td>3</td><td>6</td><td>R</td></tr>
-        <tr><td>MATH202.01</td><td>	DIFFERENTIAL EQUATIONS	</td><td>AA</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>EE210.01</td><td>	INTRODUCTION TO ELECTRICAL ENGINEERING</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>CMPE220.01.01</td><td>DISCRETE COMPUTATIONAL STRUCTURES</td><td>CC</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>AE121.03</td><td>	CRITICAL READING</td><td>BA</td><td>2</td><td>3</td><td></td></tr>
-
-      </table>
-    </div>     
-   
-    <div class="term">
-      <h3>Semester: 2021/2022-2</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>EC102.05</td><td>		PRINCIPLES OF MACROECONOMICS</td><td>AA</td><td>2</td><td>6</td><td></td></tr>
-        <tr><td>FR401.01</td><td>		FRENCH CULTURE II</td><td>BB</td><td>6</td><td>3</td><td></td></tr>
-        <tr><td>MATH102.02</td><td>		CALCULUS II</td><td>AA</td><td>3</td><td>4</td><td></td></tr>
-        <tr><td>MATH201.01</td><td>	MATRIX THEORY</td><td>AA</td><td>3</td><td>4</td><td></td></tr>
-        <tr><td>PHYS201.01</td><td>	PHYSICS III</td><td>BA</td><td>4</td><td>6</td><td></td></tr>
-
-      </table>
-    </div>     
-    
-    <div class="term">
-      <h3>Semester: 2021/2022-1</h3>
-      <table>
-        <tr>
-          <th>Code</th><th>Course</th><th>Grade</th><th>Credit</th><th>ECTS</th><th>Repeat</th>
-        </tr>
-        <tr><td>MATH101.01</td><td>CALCULUS I</td><td>AA</td><td>4</td><td>6</td><td></td></tr>
-        <tr><td>CMPE150.03</td><td>INTRODUCTION TO COMPUTING</td><td>F</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>EC101.03</td><td>PRINCIPLES OF MICROECONOMICS</td><td>AA</td><td>3</td><td>6</td><td>R</td></tr>
-        <tr><td>CHEM105.01</td><td>	FUNDAMENTALS OF CHEMISTRY</td><td>BB</td><td>3</td><td>6</td><td></td></tr>
-        <tr><td>PHYS121.01</td><td>INTRODUCTORY MECHANICS & THERMODYNAMICS</td><td>CC</td><td>4</td><td>6</td><td></td></tr>
-
-      </table>
-    </div>     
-
-    <!-- Add more semesters as needed below -->
   </div>
 </body>
 </html>
